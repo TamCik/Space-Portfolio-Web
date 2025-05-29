@@ -3,7 +3,6 @@
 import React, { useState, useRef, Suspense } from 'react'
 import {Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial  } from '@react-three/drei'
-import { Points as ThreePoints } from 'three'
 //@ts-expect-error - maath/random doesn't have proper type definitions
 import * as random from 'maath/random/dist/maath-random.esm'
 
