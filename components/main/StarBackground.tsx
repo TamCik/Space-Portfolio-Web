@@ -3,11 +3,12 @@
 import React, { useState, useRef, Suspense } from 'react'
 import {Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial  } from '@react-three/drei'
-//@ts-expect-error
+import { Points as ThreePoints } from 'three'
+//@ts-expect-error - maath/random doesn't have proper type definitions
 import * as random from 'maath/random/dist/maath-random.esm'
 
 const StarBackground = (props:any) => {
-    const ref: any = useRef();
+    const ref: any = useRef(0)
     const [sphere] = useState(() => (
         random.inSphere(new Float32Array(5000), { radius: 1.2 })
     ))
@@ -30,7 +31,7 @@ const StarBackground = (props:any) => {
               color="#fff"
               size={0.002}
               sizeAttenuation={true}
-              dethWrite={false}
+              depthWrite={false}
            />
         </Points>
     </group>
